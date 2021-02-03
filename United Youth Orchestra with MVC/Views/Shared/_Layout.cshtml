@@ -6,14 +6,19 @@
     <title>@ViewData["Title"] - United_Youth_Orchestra_with_MVC</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body style="background-color:mintcream">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
+                <div class="logo">
+                    <a asp-area="" asp-controller="Home" asp-action="Index">
+                        <img width="80" height="100" src="~/Images/logo.jpg" alt="">
+                    </a>
+                </div>
                 <a class="navbar-brand text-dark" asp-area="" asp-controller="Home" asp-action="Index">
-                    <h4>United Youth</h4>
-                    <h4>Orchestra</h4>
+                    <img width="120" height="100" src="~/Images/name.jpg" alt="">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
@@ -26,21 +31,32 @@
                             <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="About">About Us</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="Policy">Our Policy</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="NextEvent">Next Event</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success" asp-area="" asp-controller="Members" asp-action="Index">Member DB</a>
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="Gallery">Gallery Music</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-success" asp-area="" asp-controller="Instruments" asp-action="Index">Instrument DB</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-success" asp-area="" asp-controller="Schoolyears" asp-action="Index">SchoolYear DB</a>
+                            <a class="nav-link text-success" asp-area="" asp-controller="Home" asp-action="ContactUs">Conract Us</a>
                         </li>
                     </ul>
+                </div>
+                <img width="70" height="100" src="~/Images/note.jpg" alt="">
+                <!-- DB links -->
+                <div class="DBLinks">
+                    <a asp-area="" asp-controller="Notice" asp-action="Index">Notice</a>
+                    <br />
+                    <a asp-area="" asp-controller="Members" asp-action="Index">Member</a>
+                    <br />
+                    <a asp-area="" asp-controller="Instruments" asp-action="Index">Instrument</a>
+                    <br />
+                    <a asp-area="" asp-controller="Schoolyears" asp-action="Index">SchoolYear</a>
                 </div>
             </div>
         </nav>
@@ -50,12 +66,64 @@
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <!-- Footer Section Begin -->
+    <footer class="footer-section p-40" style="background-color:white">
         <div class="container">
-            &copy; 2020 - United Youth Orchestra - <a class="text-success" asp-area="" asp-controller="Home" asp-action="Policy">Our Policy</a>
+            <div class="row p-37">
+                <div class="col-md-4">
+                    <div>
+                        <div class="logo">
+                            <a asp-area="" asp-controller="Home" asp-action="Index">
+                                <br>
+                                <img width="140" height="240" src="~/Images/Logo2.jpg">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="about-footer">
+                        <br>
+                        <h5>Social Network Site</h5>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/groups/562463730434213/" target="blank">
+                                <i class="fa fa-facebook-square" style="font-size:100px"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer-address">
+                        <br>
+                        <h5>Get In Touch</h5>
+                        <ul>
+                            <li><span>The bandroom, 425 Clyde Street, Hamilton East</span></li>
+                            <li><span>unitedyouthorchestra@gmail.com</span></li>
+                            <li><span>021-136-3547</span></li>
+                        </ul>
+                        <h6>Rehearsals: </h6>
+                        <ul>
+                            <li><span>Friday: 7pm – 9pm (school term)</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="row p-20">
+            <div class="col-lg-12 text-center">
+                <div class="copyright">
+                    <br />
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script>
+                    All rights reserved | <i class="fa fa-heart-o" aria-hidden="true"></i>
+                    <a asp-area="" asp-controller="Home" asp-action="Policy">
+                        United Youth Orchestra Trust
+                    </a>
+                </div>
+            </div>
         </div>
     </footer>
+    <!-- Footer Section End -->
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

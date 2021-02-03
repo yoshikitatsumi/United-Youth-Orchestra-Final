@@ -11,7 +11,6 @@ using United_Youth_Orchestra_with_MVC.Models;
 
 namespace United_Youth_Orchestra_with_MVC.Controllers
 {
-    
     public class SchoolyearsController : Controller
     {
         private readonly ApplicationDbContext _context;

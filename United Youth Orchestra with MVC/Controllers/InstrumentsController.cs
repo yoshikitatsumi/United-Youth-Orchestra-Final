@@ -11,7 +11,6 @@ using United_Youth_Orchestra_with_MVC.Models;
 
 namespace United_Youth_Orchestra_with_MVC.Controllers
 {
-    // Everyone can see the page
     public class InstrumentsController : Controller
     {
         private readonly ApplicationDbContext _context;

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "United Youth Orchestra with MVC", "United Youth Orchestra with MVC\United Youth Orchestra with MVC.csproj", "{6B8777BF-3397-4686-B43E-D1E4F46465D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "United Youth Orchestra Final", "United Youth Orchestra with MVC\United Youth Orchestra Final.csproj", "{6B8777BF-3397-4686-B43E-D1E4F46465D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

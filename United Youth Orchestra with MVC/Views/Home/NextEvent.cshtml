@@ -1,18 +1,85 @@
 ﻿@{
     ViewData["Title"] = "Next Event";
 }
-<h1 style="color:darkgreen">@ViewData["Title"]</h1 style="color:darkgreen">
 
-<h4>
-    Date: Sunday 18th October 2020, Time: 3-4:30pm
-</h4>
-<h4>
-    Venue: Gallagher Academy of Performing Arts, Univ. of Waikato
-</h4>
-<a>
-    The United Youth Orchestra presents a varied programme of popular pieces in their Spring Concert. Orchestra Leader Tina Jiang performs Beethoven's Romance in F major. Several very talented young musicians will impress in the ‘Member’s Solo’ segment of the performance.
-</a>
-<p>
-    Come along for a wonderful afternoon of music, inspire your children, and support Waikato’s young musicians.
-</p>
-<img src="~/images/PosterOct2020b.jpg">
+<html lang="en">
+
+<head>
+    <title>NextEvent</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- Main photo Section Begin -->
+    <section class="main_photo-section">
+        <div class="container">
+            <div class="row">
+                <div class="container" style="background-image: url(../images/UYOCover.png); width: 1100px; height: 400px;">
+                    <h1 style="color:white">Next Event</h1>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Main photo Section End -->
+    <!-- Upcoming Sectiion Begin -->
+    <section class="upcoming-section">
+        <br>
+        <div class="container-fluid">
+            <div class="row text-left">
+                <div class="col-md-4">
+                    <div class="room-items">
+                        <h2>Poster</h2>
+                        <img width="350" height="480"  src="../images/PosterOct2020.jpg">
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <div class="single-team">
+                        <h3>Detail of the concert</h3>
+                        <div class="membr-pic">
+                            <h5 style="color: darkslategrey">
+                                The United Youth Orchestra presents a varied programme of popular pieces in their Spring Concert. Orchestra Leader Tina Jiang performs Beethoven's Romance in F major. Several very talented young musicians will impress in the ‘Member’s Solo’ segment of the performance.
+                                Come along for a wonderful afternoon of music, inspire your children, and support Waikato’s young musicians.
+                            </h5>
+                            <h5 style="color: darkslategrey">
+                                Programme:
+                                <br />
+                                - M.A.Charpentier: Te Deum - Prelude
+                                <br />
+                                - I.J.Paderewski: Minuet ㏌ G, Op.14 No.1
+                                <br />
+                                - D.Shostakovich - Waltz No. 2 from Jazz Suite No.2
+                                <br />
+                                - J.S.Svendsen: Norwegian Rhapsody No. 1, Op. 17
+                                <br />
+                                Member's solo stage
+                                <br />
+                                - Intermission
+                                <br />
+                                Orchestra
+                                <br />
+                                - F.J. Haydn: The Seven Last Words of Christ on the Cross, Hob.XX, I. Introduction
+                                <br />
+                                - W.A.Mozart: The Magic Flute, K. 620, Act II: March of the Priests
+                                <br />
+                                - L.v.Beethoven: Romance in F major, Op.50
+                                <br />
+                                - F.Schubert: Symphony No.5 In B Flat, D.485 - 1. Allegro
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-10">
+                    <div class="single-team">
+                        <h4>Upcoming Activities</h4>
+                        <div class="membr-pic">
+                            <img width="1100" height="300" src="../images/schedule2020.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Upcoming Sectiion End -->
+</body>
+</html>
