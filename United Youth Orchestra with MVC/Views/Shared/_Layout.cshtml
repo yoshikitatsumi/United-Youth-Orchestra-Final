@@ -7,6 +7,48 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        .dropbtn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 16px;
+            font-size: 16px;
+            border: none;
+        }
+
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f1f1f1;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+            .dropdown-content a {
+                color: #4CAF50;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+
+                .dropdown-content a:hover {
+                    background-color: #ddd;
+                }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown:hover .dropbtn {
+            background-color: #3e8e41;
+        }
+    </style>
 </head>
 <body style="background-color:mintcream">
     <header>
@@ -47,16 +89,26 @@
                         </li>
                     </ul>
                 </div>
-                <img width="70" height="100" src="~/Images/note.jpg" alt="">
-                <!-- DB links -->
-                <div class="DBLinks">
-                    <a asp-area="" asp-controller="Notice" asp-action="Index">Notice</a>
-                    <br />
-                    <a asp-area="" asp-controller="Members" asp-action="Index">Member</a>
-                    <br />
-                    <a asp-area="" asp-controller="Instruments" asp-action="Index">Instrument</a>
-                    <br />
-                    <a asp-area="" asp-controller="Schoolyears" asp-action="Index">SchoolYear</a>
+                @*Drop down buttons*@
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Member
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a asp-area="" asp-controller="Notice" asp-action="Index">Notice</a>
+                        <a asp-area="" asp-controller="Members" asp-action="Index">Member</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <button class="dropbtn">
+                        Maintenance
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dropdown-content">
+                        <a asp-area="" asp-controller="Instruments" asp-action="Index">Instrument</a>
+                        <a asp-area="" asp-controller="Schoolyears" asp-action="Index">SchoolYear</a>
+                    </div>
                 </div>
             </div>
         </nav>
