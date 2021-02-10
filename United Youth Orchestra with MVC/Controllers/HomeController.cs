@@ -50,7 +50,7 @@ namespace United_Youth_Orchestra_with_MVC.Controllers
         }
         public IActionResult ContactUs()
         {
-            Execute().Wait();
+            //Execute().Wait();
             return View();
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
