@@ -30,7 +30,7 @@
 
                 <div class="col-xl-6">
                     <h2>Application Form</h2>
-                    <embed width="550" height="810" src="../images/UYO Application Form.pdf">
+                    <embed width="540" height="800" src="../pdf/UYO Application Form.pdf">
                 </div>
                 <div class="col-xl-6">
                     <div class="single-team">
@@ -48,7 +48,7 @@
             </div>
         </div>
         <br />
-
+        </section>
         <!-- Contact Sectiion End -->
 
 
@@ -57,13 +57,18 @@
         @{
             ViewData["Title"] = "Contact Us";
         }
-
+    <section class="email">
     <h4>Get Intrested? I'd Love to Hear from You</h4>
         <hr />
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <form asp-action="Email">
                     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="From" class="custom-control-label" runat="server"></label>
+                        <input asp-for="From" class="form-control" runat="server" />
+                        <span asp-validation-for="From" class="text-danger" runat="server"></span>
+                    </div>
                     <div class="form-group">
                         <label asp-for="To" class="custom-control-label" runat="server"></label>
                         <input asp-for="To" class="form-control" runat="server" />
@@ -87,7 +92,7 @@
             </div>
         </div>
     </section>
-    <!-- Contact Sectiion End -->
+    <!-- Emal Sectiion End -->
 
 </body>
 </html>

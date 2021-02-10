@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - United_Youth_Orchestra_with_MVC</title>
+    <title>@ViewData["Title"]</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-icon-180x180.png">
     <style>
         .dropbtn {
             background-color: #4CAF50;
@@ -25,7 +27,7 @@
             display: none;
             position: absolute;
             background-color: #f1f1f1;
-            min-width: 160px;
+            min-width: 150px;
             box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
             z-index: 1;
         }
@@ -89,7 +91,7 @@
                         </li>
                     </ul>
                 </div>
-                @*Drop down buttons*@
+                <!-- Drop down buttons -->
                 <div class="dropdown">
                     <button class="dropbtn">
                         Member
@@ -100,6 +102,9 @@
                         <a asp-area="" asp-controller="Members" asp-action="Index">Member</a>
                     </div>
                 </div>
+                <a>
+                    <img width="10" height="80" src="~/Images/separater.jpg" alt="">
+                </a>
                 <div class="dropdown">
                     <button class="dropbtn">
                         Maintenance
@@ -122,7 +127,7 @@
     <footer class="footer-section p-40" style="background-color:white">
         <div class="container">
             <div class="row p-37">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div>
                         <div class="logo">
                             <a asp-area="" asp-controller="Home" asp-action="Index">
@@ -143,19 +148,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-5">
                     <div class="footer-address">
                         <br>
                         <h5>Get In Touch</h5>
-                        <ul>
-                            <li><span>The bandroom, 425 Clyde Street, Hamilton East</span></li>
-                            <li><span>unitedyouthorchestra@gmail.com</span></li>
-                            <li><span>021-136-3547</span></li>
-                        </ul>
+
+                        <i class="fa fa-home" style="font-size:17px">　The bandroom, 425 Clyde Street, Hamilton East</i>
+                        <i class="fa fa-mail-forward" style="font-size:17px">　unitedyouthorchestra@gmail.com</i>
+                        <i class="fa fa-mobile-phone" style="font-size:17px;">　 021-136-3547</i>
+                        <p></p>
                         <h6>Rehearsals: </h6>
-                        <ul>
-                            <li><span>Friday: 7pm – 9pm (school term)</span></li>
-                        </ul>
+                        <i class="fa fa-music" style="font-size:17px">　Friday: 7pm – 9pm (school term)</i>
+
                     </div>
                 </div>
 
@@ -165,7 +169,8 @@
             <div class="col-lg-12 text-center">
                 <div class="copyright">
                     <br />
-                    Copyright &copy;
+                    Copyright
+                    <i class="fa fa-copyright" style="font-size: 18px;color: #4CAF50;"></i>
                     <script>document.write(new Date().getFullYear());</script>
                     All rights reserved | <i class="fa fa-heart-o" aria-hidden="true"></i>
                     <a asp-area="" asp-controller="Home" asp-action="Policy">

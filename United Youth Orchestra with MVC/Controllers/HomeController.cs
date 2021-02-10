@@ -8,6 +8,8 @@ using Microsoft.Extensions.Logging;
 using United_Youth_Orchestra_with_MVC.Models;
 using System.Net;
 using System.Net.Mail;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace United_Youth_Orchestra_with_MVC.Controllers
 {
@@ -48,6 +50,7 @@ namespace United_Youth_Orchestra_with_MVC.Controllers
         }
         public IActionResult ContactUs()
         {
+            Execute().Wait();
             return View();
         }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
@@ -55,8 +58,35 @@ namespace United_Youth_Orchestra_with_MVC.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        static async Task Execute()
+        {
+            /*var apiKey = Environment.GetEnvironmentVariable("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");
+            var client = new SendGridClient(apiKey);
+            var from = new EmailAddress("yoshiki.tatsumi@gmail", "pyoshi19561020");
+            var subject = "Sending with SendGrid is Fun";
+            var to = new EmailAddress("yoshiki.tatsumi3@gmail.com", "pyoshi19561020");
+            var plainTextContent = "and easy to do anywhere, even with C#";
+            var htmlContent = "<strong>and easy to do anywhere, even with C#</strong>";
+            var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
+            var response = await client.SendEmailAsync(msg);*/
+
+            var apiKey = System.Environment.GetEnvironmentVariable("SENDGRID_API_KEY");
+            Console.WriteLine(apiKey);
+            var client = new SendGridClient(apiKey);
+            var msg = new SendGridMessage()
+            {
+                From = new EmailAddress("yoshiki.tatsumi@gmail", "DX Team"),
+                Subject = "Hello World from the SendGrid CSharp SDK!",
+                PlainTextContent = "Hello, Email!",
+                HtmlContent = "<strong>Hello, Email!</strong>"
+            };
+            msg.AddTo(new EmailAddress("yoshiki.tatsumi3@gmail", "Test User"));
+            var response = await client.SendEmailAsync(msg).ConfigureAwait(false);
+        }
         public IActionResult Email(United_Youth_Orchestra_with_MVC.Models.Email em)
         {
+            
             //string to = em.To;
             //string subject = em.Subject;
             //string body = em.Body;
@@ -80,20 +110,34 @@ namespace United_Youth_Orchestra_with_MVC.Controllers
             //client.Credentials = cache;
             //client.Send(mm);
 
-            SmtpClient smtp = new SmtpClient();
-            smtp.Host = "smtp.gmail.com";
-            smtp.Port = 587;
+            SmtpClient smtp = new SmtpClient
+            {
+                Host = "smtp.gmail.com",
+                Port = 587,
 
-            smtp.EnableSsl = true;
+                EnableSsl = true,
 
-            smtp.Credentials = new System.Net.NetworkCredential("yoshiki.tatsumi@gmail.com", "pyoshi19561020");
-            smtp.UseDefaultCredentials = false;
+                Credentials = new System.Net.NetworkCredential("yoshiki.tatsumi@gmail.com", "pyoshi19561020"),
+                UseDefaultCredentials = false
+            };
 
-            smtp.Send(mm);
+         //   smtp.Send(mm);
             ViewBag.Message = "Mail has been sent successfully!";
+
+             
+
+
             return View();
+
+
         }
 
+
+
     }
+
+    
+
+
 
 }
