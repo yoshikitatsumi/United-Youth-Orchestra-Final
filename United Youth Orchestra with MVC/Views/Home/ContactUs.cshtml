@@ -48,17 +48,17 @@
             </div>
         </div>
         <br />
-        </section>
-        <!-- Contact Sectiion End -->
+    </section>
+    <!-- Contact Sectiion End -->
 
 
-        @model United_Youth_Orchestra_with_MVC.Models.Email
+    @model United_Youth_Orchestra_with_MVC.Models.Email
 
-        @{
-            ViewData["Title"] = "Contact Us";
-        }
+    @{
+        ViewData["Title"] = "Contact Us";
+    }
     <section class="email">
-    <h4>Get Intrested? I'd Love to Hear from You</h4>
+        <h4>Get Intrested? I'd Love to Hear from You</h4>
         <hr />
         <div class="row">
             <div class="col-md-8">
@@ -93,6 +93,20 @@
         </div>
     </section>
     <!-- Emal Sectiion End -->
+
+    @*<form id="ajax-contact-form" action="#">
+        <div class="row">
+            <div class="col-md-6">
+                <input type="text" name="name" value="" placeholder="Name *" />
+                <input type="text" name="email" value="" placeholder="Email *" />
+                <input type="text" name="subject" value="" placeholder="Subject" />
+            </div>
+            <div class="col-md-6">
+                <textarea name="message" id="message" placeholder="Message *"></textarea>
+            </div>
+        </div>
+        <input type="submit" class="send_btn" value="Send message">
+    </form>*@
 
 </body>
 </html>
