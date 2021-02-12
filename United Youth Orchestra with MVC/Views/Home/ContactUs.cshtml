@@ -6,6 +6,20 @@
 <head>
     <title>Contact Us</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    @*<meta charset="utf-8">
+        <title>United Youth Orchestra | Hamilton  | New Zealand</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link href="css/plugins.css" rel="stylesheet" type="text/css" />
+        <link href="css/style2.css" rel="stylesheet" type="text/css" />
+        <link rel="shortcut icon" href="img/favicon.ico">
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,600,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet" type="text/css">
+        <link href="http://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" type="text/css">
+        <script type="text/javascript" src="js/jquery.min.js"></script>*@
+
 </head>
 
 <body>
@@ -52,63 +66,86 @@
     <!-- Contact Sectiion End -->
 
 
-    @model United_Youth_Orchestra_with_MVC.Models.Email
+    @model United_Youth_Orchestra_with_MVC.Models.MailModel
 
-    @{
-        ViewData["Title"] = "Contact Us";
-    }
     <section class="email">
         <h4>Get Intrested? I'd Love to Hear from You</h4>
         <hr />
         <div class="row">
             <div class="col-md-8">
-                <form asp-action="Email">
-                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                    <div class="form-group">
-                        <label asp-for="From" class="custom-control-label" runat="server"></label>
-                        <input asp-for="From" class="form-control" runat="server" />
-                        <span asp-validation-for="From" class="text-danger" runat="server"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="To" class="custom-control-label" runat="server"></label>
-                        <input asp-for="To" class="form-control" runat="server" />
-                        <span asp-validation-for="To" class="text-danger" runat="server"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Subject" class="custom-control-label" runat="server"></label>
-                        <input asp-for="Subject" class="form-control" runat="server" />
-                        <span asp-validation-for="Subject" class="text-danger" runat="server"></span>
-                    </div>
-                    <div class="form-group">
-                        <label asp-for="Body" class="custom-control-label" runat="server"></label>
-                        <textarea asp-for="Body" class="form-control" rows="3" cols="15" runat="server"></textarea>
-                        <span asp-validation-for="Body" class="text-danger" runat="server"></span>
-                    </div>
-                    <div class="form-group">
-                        <input type="submit" value="Send Email" class="btn btn-primary" runat="server" />
-                    </div>
-                    <h5>@ViewBag.message</h5>
-                </form>
-            </div>
-        </div>
-    </section>
-    <!-- Emal Sectiion End -->
 
-    @*<form id="ajax-contact-form" action="#">
-        <div class="row">
-            <div class="col-md-6">
-                <input type="text" name="name" value="" placeholder="Name *" />
-                <input type="text" name="email" value="" placeholder="Email *" />
-                <input type="text" name="subject" value="" placeholder="Subject" />
-            </div>
-            <div class="col-md-6">
-                <textarea name="message" id="message" placeholder="Message *"></textarea>
-            </div>
-        </div>
-        <input type="submit" class="send_btn" value="Send message">
-    </form>*@
+                <fieldset>
+                    <legend>
+                        Send Email
+                    </legend>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.ValidationSummary()
+                        <p>From: </p>
+                        <p>@Html.TextBoxFor(m => m.From)</p>
+                        <p>To: </p>
+                        <p>@Html.TextBoxFor(m => m.To)</p>
+                        <p>Subject: </p>
+                        <p>@Html.TextBoxFor(m => m.Subject)</p>
+                        <p>Body: </p>
+                        <p>@Html.TextAreaFor(m => m.Body)</p>
+                        <input type="submit" value="Send" />
+                    }
+                </fieldset>
 
-</body>
+
+                @*<form asp-action="Email">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <div class="form-group">
+                            <label asp-for="From" class="custom-control-label" runat="server"></label>
+                            <input asp-for="From" class="form-control" runat="server" />
+                            <span asp-validation-for="From" class="text-danger" runat="server"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="To" class="custom-control-label" runat="server"></label>
+                            <input asp-for="To" class="form-control" runat="server" />
+                            <span asp-validation-for="To" class="text-danger" runat="server"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Subject" class="custom-control-label" runat="server"></label>
+                            <input asp-for="Subject" class="form-control" runat="server" />
+                            <span asp-validation-for="Subject" class="text-danger" runat="server"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Body" class="custom-control-label" runat="server"></label>
+                            <textarea asp-for="Body" class="form-control" rows="3" cols="15" runat="server"></textarea>
+                            <span asp-validation-for="Body" class="text-danger" runat="server"></span>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Send Email" class="btn btn-primary" runat="server" />
+                        </div>
+                        <h5>@ViewBag.message</h5>
+                    </form>*@*
+                </div>
+            </div>
+        </section>
+        <!-- Emal Sectiion End -->
+        @*<div class="contact_form  contact_form_left">
+                <div class="center pb13"><h2>Get Intrested? I'd Love to Hear from You</h2></div>
+                <div id="note"></div>
+                <div id="fields">
+                    <form id="ajax-contact-form" action="#">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" name="name" value="" placeholder="Name *" />
+                                <input type="text" name="email" value="" placeholder="Email *" />
+                                <input type="text" name="subject" value="" placeholder="Subject" />
+                            </div>
+                            <div class="col-md-6">
+                                <textarea name="message" id="message" placeholder="Message *"></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" class="send_btn" value="Send message">
+                    </form>
+                </div>
+            </div>*@
+
+    </body>
 </html>
 
 
